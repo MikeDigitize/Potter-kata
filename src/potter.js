@@ -6,24 +6,22 @@ class Potter {
     this.basket.push(book);
   }
   checkout() {
-    return this.discount();
-  }
-  discount() {
-    let collection = [];
+    let bookCollection = [];
 
     for (let i = 0; i < 5; i++) {
-      const books = getBooksNumbered(i + 1, this.basket);
-      collection.push(books);
+      const number = i + 1;
+      const books = getBooksInBasketWithNumber(number, this.basket);
+      bookCollection.push(books);
     }
 
-    let total = 0;
-    const max = getNumberOfBooksWhichAppearsMost(collection);
+    let grandTotal = 0;
+    const max = getLongestArrayLength(bookCollection);
 
-    for (let i = 0; i < max; i++) {
+    for (let x = 0; x < max; x++) {
       let totalBooks = 0;
 
-      for (let j = 0; j < collection.length; j++) {
-        if (collection[j][i]) {
+      for (let y = 0; y < bookCollection.length; y++) {
+        if (bookCollection[y][x]) {
           totalBooks++;
         }
       }
@@ -50,25 +48,25 @@ class Potter {
           break;
       }
 
-      total += cost;
+      grandTotal += cost;
     }
 
-    return Number(total.toFixed(2));
+    return Number(grandTotal.toFixed(2));
   }
-  getBook(number) {
+  createBook(number) {
     return {
       number,
     };
   }
 }
 
-function getBooksNumbered(number, books) {
+function getBooksInBasketWithNumber(number, books) {
   return books.filter((book) => book.number === number);
 }
 
-function getNumberOfBooksWhichAppearsMost(collection) {
+function getLongestArrayLength(bookCollection) {
   let max = 0;
-  collection.forEach(function (books) {
+  bookCollection.forEach(function (books) {
     if (books.length > max) {
       max = books.length;
     }
