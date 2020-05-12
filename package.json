@@ -1,0 +1,14 @@
+{
+  "name": "potter-kata",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/MikeDigitize/Potter-kata",
+  "author": "MikeDigitize <chad_01@hotmail.co.uk>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^26.0.1"
+  },
+  "scripts": {
+    "test": "jest --watchAll --verbose"
+  }
+}
