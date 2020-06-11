@@ -189,7 +189,7 @@ describe('Harry Potter book kata', function() {
     2 copies of the second book
     2 copies of the third book
     1 copy of the fourth book
-    1 copy of the fifth book = 51.20`, function() {
+    1 copy of the fifth book = 51.60`, function() {
 
         const potter = new Potter();
         const book = potter.createBook(1);
